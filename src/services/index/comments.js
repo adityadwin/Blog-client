@@ -15,7 +15,7 @@ export const createNewComment = async ({
     };
 
     const { data } = await axios.post(
-      "https://blog-server-roan-nu.vercel.app/api/comments",
+      "https://blog-server-nnyu.onrender.com/api/comments",
       {
         desc,
         slug,
@@ -41,7 +41,7 @@ export const updateComment = async ({ token, desc, check, commentId }) => {
     };
 
     const { data } = await axios.put(
-      `https://blog-server-roan-nu.vercel.app/api/comments/${commentId}`,
+      `https://blog-server-nnyu.onrender.com/api/comments/${commentId}`,
       {
         desc,
         check,
@@ -64,7 +64,7 @@ export const deleteComment = async ({ token, commentId }) => {
       },
     };
 
-    const { data } = await axios.delete(`https://blog-server-roan-nu.vercel.app/api/comments/${commentId}`, config);
+    const { data } = await axios.delete(`https://blog-server-nnyu.onrender.com/api/comments/${commentId}`, config);
     return data;
   } catch (error) {
     if (error.response && error.response.data.message)
@@ -87,7 +87,7 @@ export const getAllComments = async (
     };
 
     const { data, headers } = await axios.get(
-      `https://blog-server-roan-nu.vercel.app/api/comments?searchKeyword=${searchKeyword}&page=${page}&limit=${limit}`,
+      `https://blog-server-nnyu.onrender.com/api/comments?searchKeyword=${searchKeyword}&page=${page}&limit=${limit}`,
       config
     );
     return { data, headers };
